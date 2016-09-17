@@ -11,6 +11,10 @@ import Foundation
 struct Thing: Equatable {
     let name: String
     let _id: Int
+    
+    var description: String {
+        return name
+    }
 }
 
 func ==(rhs: Thing, lhs: Thing) -> Bool {
