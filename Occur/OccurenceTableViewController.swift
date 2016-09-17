@@ -1,5 +1,5 @@
 //
-//  MasterViewController.swift
+//  OccurenceTableViewController.swift
 //  Occur
 //
 //  Created by Dorian Scheidt on 2016-09-17.
@@ -8,12 +8,16 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
-
-    var detailViewController: DetailViewController? = nil
-    var things = [Thing]()
-    let repo = ThingsRepo()
-
+class OccurenceTableViewController: UITableViewController {
+    var occurences = [Occurence]()
+    let repo = OccurenceRepo()
+    var thing: Thing? {
+        didSet {
+            if let thing = thing {
+                occurences = repo.forThing(thing)
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,15 +26,10 @@ class MasterViewController: UITableViewController {
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         self.navigationItem.rightBarButtonItem = addButton
-        if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
-        }
-        things = repo.all()
+        occurences = repo.all()
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
         super.viewWillAppear(animated)
     }
 
@@ -40,8 +39,10 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
-        let newThing = repo.save(Thing(name: NSDate().description))
-        things.insert(newThing, at: 0)
+        guard let thing = thing else { return }
+
+        let newOccurence = repo.save(Occurence(thing: thing))
+        occurences.insert(newOccurence, at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         self.tableView.insertRows(at: [indexPath], with: .automatic)
     }
@@ -51,11 +52,7 @@ class MasterViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let thing = things[indexPath.row]
-                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = thing
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
+                let occurence = occurences[indexPath.row]
             }
         }
     }
@@ -67,14 +64,14 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return things.count
+        return occurences.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let thing = things[indexPath.row]
-        cell.textLabel!.text = thing.description
+        let occurence = occurences[indexPath.row]
+        cell.textLabel!.text = occurence.date.description
         return cell
     }
 
@@ -85,13 +82,10 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            things.remove(at: indexPath.row)
+            occurences.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
-
-
 }
-

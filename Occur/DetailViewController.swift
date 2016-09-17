@@ -12,10 +12,10 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
-
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = self.detailItem {
+            occurenceViewController.thing = detail
             if let label = self.detailDescriptionLabel {
                 label.text = detail.description
             }
@@ -39,7 +39,5 @@ class DetailViewController: UIViewController {
             self.configureView()
         }
     }
-
-
 }
 
