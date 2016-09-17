@@ -15,6 +15,8 @@
 		98B1CB451D8DCBE800F9187C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B1CB431D8DCBE800F9187C /* LaunchScreen.storyboard */; };
 		98B1CB501D8DCBE800F9187C /* OccurTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1CB4F1D8DCBE800F9187C /* OccurTests.swift */; };
 		98B1CB5B1D8DCBE800F9187C /* OccurUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1CB5A1D8DCBE800F9187C /* OccurUITests.swift */; };
+		98B1CB691D8DCD1C00F9187C /* Thing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1CB681D8DCD1C00F9187C /* Thing.swift */; };
+		98B1CB6B1D8DCE7100F9187C /* ThingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1CB6A1D8DCE7100F9187C /* ThingsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		98B1CB561D8DCBE800F9187C /* OccurUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OccurUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B1CB5A1D8DCBE800F9187C /* OccurUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccurUITests.swift; sourceTree = "<group>"; };
 		98B1CB5C1D8DCBE800F9187C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98B1CB681D8DCD1C00F9187C /* Thing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thing.swift; sourceTree = "<group>"; };
+		98B1CB6A1D8DCE7100F9187C /* ThingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThingsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				98B1CB381D8DCBE800F9187C /* AppDelegate.swift */,
+				98B1CB681D8DCD1C00F9187C /* Thing.swift */,
 				98B1CB3A1D8DCBE800F9187C /* MasterViewController.swift */,
 				98B1CB3C1D8DCBE800F9187C /* DetailViewController.swift */,
 				98B1CB3E1D8DCBE800F9187C /* Main.storyboard */,
@@ -115,6 +120,7 @@
 			children = (
 				98B1CB4F1D8DCBE800F9187C /* OccurTests.swift */,
 				98B1CB511D8DCBE800F9187C /* Info.plist */,
+				98B1CB6A1D8DCE7100F9187C /* ThingsTests.swift */,
 			);
 			path = OccurTests;
 			sourceTree = "<group>";
@@ -262,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98B1CB691D8DCD1C00F9187C /* Thing.swift in Sources */,
 				98B1CB3D1D8DCBE800F9187C /* DetailViewController.swift in Sources */,
 				98B1CB3B1D8DCBE800F9187C /* MasterViewController.swift in Sources */,
 				98B1CB391D8DCBE800F9187C /* AppDelegate.swift in Sources */,
@@ -272,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98B1CB6B1D8DCE7100F9187C /* ThingsTests.swift in Sources */,
 				98B1CB501D8DCBE800F9187C /* OccurTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
