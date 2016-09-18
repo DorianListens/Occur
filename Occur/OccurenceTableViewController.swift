@@ -22,10 +22,6 @@ class OccurenceTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
-
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-        self.navigationItem.rightBarButtonItem = addButton
         occurences = repo.all()
     }
 
@@ -47,16 +43,6 @@ class OccurenceTableViewController: UITableViewController {
         self.tableView.insertRows(at: [indexPath], with: .automatic)
     }
 
-    // MARK: - Segues
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                let occurence = occurences[indexPath.row]
-            }
-        }
-    }
-
     // MARK: - Table View
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -68,7 +54,7 @@ class OccurenceTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OccurenceCell", for: indexPath)
 
         let occurence = occurences[indexPath.row]
         cell.textLabel!.text = occurence.date.description
