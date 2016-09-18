@@ -10,7 +10,7 @@ import UIKit
 
 class OccurenceTableViewController: UITableViewController {
     var occurences = [Occurence]()
-    let repo = OccurenceRepo()
+    var repo: OccurenceRepo = OccurenceRepo()
     var thing: Thing? {
         didSet {
             if let thing = thing {
@@ -22,7 +22,9 @@ class OccurenceTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        occurences = repo.all()
+        if let t = thing {
+            occurences = repo.forThing(t)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

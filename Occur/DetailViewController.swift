@@ -13,6 +13,12 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
+    var repo: OccurenceRepo = OccurenceRepo() {
+        didSet {
+            updateRepoRef()
+        }
+    }
+
     let tvc = OccurenceTableViewController()
 
     var detailItem: Thing? {
@@ -20,6 +26,10 @@ class DetailViewController: UIViewController {
             // Update the view.
             self.configureView()
         }
+    }
+
+    func updateRepoRef() {
+        tvc.repo = repo
     }
 
     override func viewDidLoad() {

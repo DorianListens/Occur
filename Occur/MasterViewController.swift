@@ -12,7 +12,8 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var things = [Thing]()
-    let repo = ThingsRepo()
+    let thingsRepo = ThingsRepo()
+    let oRepo = OccurenceRepo()
 
 
     override func viewDidLoad() {
@@ -26,7 +27,7 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
-        things = repo.all()
+        things = thingsRepo.all()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -40,7 +41,7 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
-        let newThing = repo.save(Thing(name: NSDate().description))
+        let newThing = thingsRepo.save(Thing(name: NSDate().description))
         things.insert(newThing, at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         self.tableView.insertRows(at: [indexPath], with: .automatic)
@@ -53,6 +54,7 @@ class MasterViewController: UITableViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let thing = things[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                controller.repo = oRepo
                 controller.detailItem = thing
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true

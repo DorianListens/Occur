@@ -121,5 +121,3 @@ class OccurenceRepo: Repository<Occurence> {
         return allTheThings.filter { $0.thingID == thing._id }
     }
 }
-
-
