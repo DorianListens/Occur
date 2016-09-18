@@ -77,9 +77,9 @@ func ==(rhs: SaveableID, lhs: SaveableID) -> Bool {
 
 class Repository<T> where T: Saveable {
     var allTheThings: [T] = []
-    init() {
-    }
-    
+
+    init() {}
+
     func save(_ thing: T) -> T {
         let thingToSave = prepareToSave(thing)
         allTheThings.append(thingToSave)
