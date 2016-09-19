@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9826818C1D8F22F500D9EAF1 /* EditThingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826818B1D8F22F500D9EAF1 /* EditThingViewController.swift */; };
-		98955EAA1D8E02A500E0FC87 /* OccurenceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98955EA91D8E02A500E0FC87 /* OccurenceTableViewController.swift */; };
+		98955EAA1D8E02A500E0FC87 /* OccurrenceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98955EA91D8E02A500E0FC87 /* OccurrenceTableViewController.swift */; };
 		98B1CB391D8DCBE800F9187C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1CB381D8DCBE800F9187C /* AppDelegate.swift */; };
 		98B1CB3B1D8DCBE800F9187C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1CB3A1D8DCBE800F9187C /* MasterViewController.swift */; };
 		98B1CB3D1D8DCBE800F9187C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1CB3C1D8DCBE800F9187C /* DetailViewController.swift */; };
@@ -39,8 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9826818B1D8F22F500D9EAF1 /* EditThingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditThingViewController.swift; sourceTree = "<group>"; };
-		98955EA91D8E02A500E0FC87 /* OccurenceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OccurenceTableViewController.swift; sourceTree = "<group>"; };
+		98955EA91D8E02A500E0FC87 /* OccurrenceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OccurrenceTableViewController.swift; sourceTree = "<group>"; };
 		98B1CB351D8DCBE800F9187C /* Occur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Occur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B1CB381D8DCBE800F9187C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98B1CB3A1D8DCBE800F9187C /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -115,8 +113,7 @@
 				98B1CB411D8DCBE800F9187C /* Assets.xcassets */,
 				98B1CB431D8DCBE800F9187C /* LaunchScreen.storyboard */,
 				98B1CB461D8DCBE800F9187C /* Info.plist */,
-				98955EA91D8E02A500E0FC87 /* OccurenceTableViewController.swift */,
-				9826818B1D8F22F500D9EAF1 /* EditThingViewController.swift */,
+				98955EA91D8E02A500E0FC87 /* OccurrenceTableViewController.swift */,
 			);
 			path = Occur;
 			sourceTree = "<group>";
@@ -274,10 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98955EAA1D8E02A500E0FC87 /* OccurenceTableViewController.swift in Sources */,
+				98955EAA1D8E02A500E0FC87 /* OccurrenceTableViewController.swift in Sources */,
 				98B1CB691D8DCD1C00F9187C /* Thing.swift in Sources */,
 				98B1CB3D1D8DCBE800F9187C /* DetailViewController.swift in Sources */,
-				9826818C1D8F22F500D9EAF1 /* EditThingViewController.swift in Sources */,
 				98B1CB3B1D8DCBE800F9187C /* MasterViewController.swift in Sources */,
 				98B1CB391D8DCBE800F9187C /* AppDelegate.swift in Sources */,
 			);
