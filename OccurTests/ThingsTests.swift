@@ -20,35 +20,47 @@ class ThingsTests: XCTestCase {
     }
     
     func testGetThingReturnsThingForTheID() {
-        let id = 1
-        let thing = Thing(name: "A thing", _id: id)
+        let thing = Thing(name: "A thing")
         let repo = ThingsRepo()
         
-        repo.save(thing: thing)
+        let savedThing = repo.save(thing)
         
-        let found = repo.find(id: id)
+        let found = repo.find(id: savedThing._id)
         
-        XCTAssertEqual(thing, found)
+        XCTAssertEqual(savedThing, found)
     }
     
     func testAllReturnsAllTheThings() {
-        let thing1 = Thing(name: "Thing 1", _id: 1)
-        let thing2 = Thing(name: "THing 2", _id: 2)
+        let thing1 = Thing(name: "Thing 1")
+        let thing2 = Thing(name: "Thing 2")
         
         let repo = ThingsRepo()
         
-        repo.save(things: [thing1, thing2])
+        let things = repo.save([thing1, thing2])
         
-        XCTAssertEqual(repo.all(), [thing1, thing2])
+        XCTAssertEqual(repo.all(), things)
     }
     
     func testDeleteRemovesTheThing() {
-        let thing1 = Thing(name: "Thing 1", _id: 1)
+        let thing1 = Thing(name: "Thing 1")
         let repo = ThingsRepo()
-        repo.save(thing: thing1)
+        let savedThing = repo.save(thing1)
         
-        repo.delete(thing: thing1)
+        repo.delete(savedThing)
         
         XCTAssertEqual(repo.all(), [])
+    }
+    
+    func testAddingAnOccurance() {
+        let thing1 = Thing(name: "Thing 1")
+        let repo = ThingsRepo()
+        let occurrences = OccurrenceRepo()
+        
+        let savedThing = repo.save(thing1)
+        
+        let occurrence = Occurrence(thing: savedThing)
+        let savedOccurrence = occurrences.save(occurrence)
+        
+        XCTAssertEqual(occurrences.forThing(savedThing), [savedOccurrence])
     }
 }

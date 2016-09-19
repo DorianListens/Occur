@@ -12,7 +12,8 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var things = [Thing]()
-    let repo = ThingsRepo()
+    let thingsRepo = ThingsRepo()
+    let oRepo = OccurrenceRepo()
 
 
     override func viewDidLoad() {
@@ -20,13 +21,13 @@ class MasterViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem
 
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-        self.navigationItem.rightBarButtonItem = addButton
+//        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
+//        self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
-        things = repo.all()
+        things = thingsRepo.all()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -39,9 +40,8 @@ class MasterViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func insertNewObject(_ sender: Any) {
-        let newThing = Thing(name: NSDate().description, _id: things.count)
-        repo.save(thing: newThing)
+    func insertNewThing(_ thing: Thing) {
+        let newThing = thingsRepo.save(thing)
         things.insert(newThing, at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         self.tableView.insertRows(at: [indexPath], with: .automatic)
@@ -54,10 +54,15 @@ class MasterViewController: UITableViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let thing = things[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                controller.repo = oRepo
                 controller.detailItem = thing
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
+        }
+
+        if segue.identifier == "createThing" {
+            let controller = segue.destination as! EditThingViewController
         }
     }
 
