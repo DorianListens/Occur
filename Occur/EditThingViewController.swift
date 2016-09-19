@@ -10,17 +10,15 @@ import UIKit
 
 class EditThingViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var newThingTitleTextField: UITextField!
+    @IBOutlet weak var nameInput: UITextField!
 
-    var thing: Thing?
+    var thing: Thing = Thing()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        newThingTitleTextField.delegate = self
-        if let t = thing {
-            newThingTitleTextField.text = t.name
-        }
-        newThingTitleTextField.becomeFirstResponder()
+        nameInput.delegate = self
+        nameInput.text = thing.name
+        nameInput.becomeFirstResponder()
     }
 
     // MARK: - UITextFieldDelegate
@@ -31,9 +29,11 @@ class EditThingViewController: UIViewController, UITextFieldDelegate {
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if let controller = navigationController?.viewControllers[0] as? MasterViewController, let t = thing {
-            controller.insertNewThing(t.setName(name: newThingTitleTextField.text!))
+        guard let controller = navigationController?.viewControllers[0] as? MasterViewController else {
+            return
         }
+
+        controller.insertNewThing(thing.setName(name: nameInput.text!))
         navigationController?.popViewController(animated: true)
     }
 
@@ -42,6 +42,6 @@ class EditThingViewController: UIViewController, UITextFieldDelegate {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let controller = segue.destination as! MasterViewController
-        controller.insertNewThing(Thing(name: newThingTitleTextField.text!))
+        controller.insertNewThing(Thing(name: nameInput.text!))
     }
 }

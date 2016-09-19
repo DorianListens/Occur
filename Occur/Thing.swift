@@ -15,8 +15,8 @@ struct Thing: Saveable {
     var description: String {
         return name
     }
-    
-    init(name: String, id: SaveableID = .invalid) {
+
+    init(name: String = "a new thing", id: SaveableID = .invalid) {
         self.name = name
         self._id = id
     }
