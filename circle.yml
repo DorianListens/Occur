@@ -1,0 +1,9 @@
+machine:
+  xcode:
+    version: "8.0"
+  environment:
+    XCODE_SCHEME: Occur
+
+test:
+  override:
+    - bin/test
