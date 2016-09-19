@@ -20,9 +20,13 @@ struct Thing: Saveable {
         self.name = name
         self._id = id
     }
-    
+
     func setID(id: SaveableID) -> Thing {
         return Thing(name: name, id: id)
+    }
+
+    func setName(name: String) -> Thing {
+        return Thing(name: name, id: _id)
     }
 }
 
@@ -77,15 +81,23 @@ func ==(rhs: SaveableID, lhs: SaveableID) -> Bool {
 
 class Repository<T> where T: Saveable {
     var allTheThings: [T] = []
+    var thingCounter = 0
 
     init() {}
 
     func save(_ thing: T) -> T {
         let thingToSave = prepareToSave(thing)
-        allTheThings.append(thingToSave)
+
+        if let idx = allTheThings.index(where: { $0._id == thingToSave._id }) {
+            allTheThings.remove(at: idx)
+            allTheThings.insert(thingToSave, at: idx)
+        } else {
+            allTheThings.append(thingToSave)
+        }
+
         return thingToSave
     }
-    
+
     func save(_ things: [T]) -> [T] {
         return things.map(save)
     }
@@ -95,8 +107,13 @@ class Repository<T> where T: Saveable {
         case .valid(_):
             return thing
         case .invalid:
-            return thing.setID(id: .valid(allTheThings.count))
+            return thing.setID(id: generateID())
         }
+    }
+
+    private func generateID() -> SaveableID {
+        thingCounter += 1
+        return .valid(thingCounter)
     }
     
     func delete(_ thing: T) {

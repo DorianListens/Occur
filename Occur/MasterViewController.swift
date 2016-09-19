@@ -11,23 +11,21 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var things = [Thing]()
     let thingsRepo = ThingsRepo()
     let oRepo = OccurrenceRepo()
+    var things: [Thing] {
+        return thingsRepo.all()
+    }
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem
 
-//        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-//        self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
-        things = thingsRepo.all()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -41,10 +39,8 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewThing(_ thing: Thing) {
-        let newThing = thingsRepo.save(thing)
-        things.insert(newThing, at: 0)
-        let indexPath = IndexPath(row: 0, section: 0)
-        self.tableView.insertRows(at: [indexPath], with: .automatic)
+        let _ = thingsRepo.save(thing)
+        tableView.reloadData()
     }
 
     // MARK: - Segues
@@ -63,6 +59,7 @@ class MasterViewController: UITableViewController {
 
         if segue.identifier == "createThing" {
             let controller = segue.destination as! EditThingViewController
+            controller.thing = thingsRepo.save(Thing(name:"A new thing"))
         }
     }
 
@@ -91,7 +88,8 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            things.remove(at: indexPath.row)
+            let thingToDelete = things[indexPath.row]
+            thingsRepo.delete(thingToDelete)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.

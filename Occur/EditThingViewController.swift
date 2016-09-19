@@ -11,10 +11,15 @@ import UIKit
 class EditThingViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var newThingTitleTextField: UITextField!
+
+    var thing: Thing?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         newThingTitleTextField.delegate = self
+        if let t = thing {
+            newThingTitleTextField.text = t.name
+        }
         newThingTitleTextField.becomeFirstResponder()
     }
 
@@ -26,8 +31,9 @@ class EditThingViewController: UIViewController, UITextFieldDelegate {
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-        let controller = navigationController?.viewControllers[0] as! MasterViewController
-        controller.insertNewThing(Thing(name: newThingTitleTextField.text!))
+        if let controller = navigationController?.viewControllers[0] as? MasterViewController, let t = thing {
+            controller.insertNewThing(t.setName(name: newThingTitleTextField.text!))
+        }
         navigationController?.popViewController(animated: true)
     }
 

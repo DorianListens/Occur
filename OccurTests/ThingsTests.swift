@@ -50,6 +50,18 @@ class ThingsTests: XCTestCase {
         
         XCTAssertEqual(repo.all(), [])
     }
+
+    func testAddingAndDeleting() {
+        let repo = ThingsRepo()
+        let thing = repo.save(Thing(name:"Thing1"))
+        let thing2 = repo.save(Thing(name:"Thing2"))
+
+        repo.delete(thing)
+
+        let thing3 = repo.save(Thing(name:"Thing3"))
+
+        XCTAssertEqual(repo.all(), [thing2, thing3])
+    }
     
     func testAddingAnOccurance() {
         let thing1 = Thing(name: "Thing 1")
@@ -62,5 +74,28 @@ class ThingsTests: XCTestCase {
         let savedOccurrence = occurrences.save(occurrence)
         
         XCTAssertEqual(occurrences.forThing(savedThing), [savedOccurrence])
+    }
+
+    func testSavingAThingAgain() {
+        let repo = ThingsRepo()
+        let thing = repo.save(Thing(name:"Thing1"))
+
+        let changedThing = thing.setName(name: "something else")
+
+        let _ = repo.save(changedThing)
+
+        XCTAssertEqual(repo.all(), [changedThing])
+    }
+
+    func testUpdateDoesNotChangeOrder() {
+        let repo = ThingsRepo()
+        let thing = repo.save(Thing(name: "Thing1"))
+        let thing2 = repo.save(Thing(name: "Thing2"))
+
+        XCTAssertEqual([thing, thing2], repo.all())
+
+        let changedThing = repo.save(Thing(name: "Something Else", id: thing._id))
+
+        XCTAssertEqual(repo.all(), [changedThing, thing2])
     }
 }
