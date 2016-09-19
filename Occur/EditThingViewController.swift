@@ -14,7 +14,6 @@ class EditThingViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Made it!")
         newThingTitleTextField.delegate = self
         newThingTitleTextField.becomeFirstResponder()
     }
@@ -27,7 +26,6 @@ class EditThingViewController: UIViewController, UITextFieldDelegate {
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print("You did it! \(newThingTitleTextField.text)")
         let controller = navigationController?.viewControllers[0] as! MasterViewController
         controller.insertNewThing(Thing(name: newThingTitleTextField.text!))
         navigationController?.popViewController(animated: true)
