@@ -13,7 +13,7 @@ class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     var things = [Thing]()
     let thingsRepo = ThingsRepo()
-    let oRepo = OccurenceRepo()
+    let oRepo = OccurrenceRepo()
 
 
     override func viewDidLoad() {

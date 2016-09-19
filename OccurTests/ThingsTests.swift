@@ -54,13 +54,13 @@ class ThingsTests: XCTestCase {
     func testAddingAnOccurance() {
         let thing1 = Thing(name: "Thing 1")
         let repo = ThingsRepo()
-        let occurences = OccurenceRepo()
+        let occurrences = OccurrenceRepo()
         
         let savedThing = repo.save(thing1)
         
-        let occurence = Occurence(thing: savedThing)
-        let savedOccurence = occurences.save(occurence)
+        let occurrence = Occurrence(thing: savedThing)
+        let savedOccurrence = occurrences.save(occurrence)
         
-        XCTAssertEqual(occurences.forThing(savedThing), [savedOccurence])
+        XCTAssertEqual(occurrences.forThing(savedThing), [savedOccurrence])
     }
 }

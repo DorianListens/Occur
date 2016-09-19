@@ -13,13 +13,13 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
-    var repo: OccurenceRepo = OccurenceRepo() {
+    var repo: OccurrenceRepo = OccurrenceRepo() {
         didSet {
             updateRepoRef()
         }
     }
 
-    let tvc = OccurenceTableViewController()
+    let tvc = OccurrenceTableViewController()
 
     var detailItem: Thing? {
         didSet {

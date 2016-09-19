@@ -30,7 +30,7 @@ func ==(rhs: Thing, lhs: Thing) -> Bool {
     return rhs._id == lhs._id && rhs.name == lhs.name
 }
 
-struct Occurence: Saveable {
+struct Occurrence: Saveable {
     let thingID: SaveableID
     let _id: SaveableID
     let date: Date
@@ -45,12 +45,12 @@ struct Occurence: Saveable {
         self.date = date
     }
     
-    func setID(id: SaveableID) -> Occurence {
-        return Occurence(thingID: thingID, id: id)
+    func setID(id: SaveableID) -> Occurrence {
+        return Occurrence(thingID: thingID, id: id)
     }
 }
 
-func ==(rhs: Occurence, lhs: Occurence) -> Bool {
+func ==(rhs: Occurrence, lhs: Occurrence) -> Bool {
     return rhs._id == lhs._id && rhs.thingID == lhs.thingID
 }
 
@@ -116,8 +116,8 @@ class Repository<T> where T: Saveable {
 
 class ThingsRepo: Repository<Thing> {}
 
-class OccurenceRepo: Repository<Occurence> {
-    func forThing(_ thing: Thing) -> [Occurence] {
+class OccurrenceRepo: Repository<Occurrence> {
+    func forThing(_ thing: Thing) -> [Occurrence] {
         return allTheThings.filter { $0.thingID == thing._id }
     }
 }
