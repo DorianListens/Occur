@@ -1,0 +1,5 @@
+xcrun xcodebuild \
+  -scheme Occur \
+  -destination "platform=iOS Simulator,name=iPhone 6" \
+  test \
+  | xcpretty --color
