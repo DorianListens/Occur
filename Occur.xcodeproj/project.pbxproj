@@ -15,10 +15,11 @@
 		98B1CB401D8DCBE800F9187C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B1CB3E1D8DCBE800F9187C /* Main.storyboard */; };
 		98B1CB421D8DCBE800F9187C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B1CB411D8DCBE800F9187C /* Assets.xcassets */; };
 		98B1CB451D8DCBE800F9187C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B1CB431D8DCBE800F9187C /* LaunchScreen.storyboard */; };
-		98B1CB501D8DCBE800F9187C /* OccurTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1CB4F1D8DCBE800F9187C /* OccurTests.swift */; };
 		98B1CB5B1D8DCBE800F9187C /* OccurUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1CB5A1D8DCBE800F9187C /* OccurUITests.swift */; };
 		98B1CB691D8DCD1C00F9187C /* Thing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1CB681D8DCD1C00F9187C /* Thing.swift */; };
 		98B1CB6B1D8DCE7100F9187C /* ThingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1CB6A1D8DCE7100F9187C /* ThingsTests.swift */; };
+		98EE811E1D90FDF70027BEB9 /* Occurrence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EE811D1D90FDF70027BEB9 /* Occurrence.swift */; };
+		98EE81201D90FE6C0027BEB9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EE811F1D90FE6C0027BEB9 /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,24 +40,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9826818D1D8FA84300D9EAF1 /* EditThingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditThingViewController.swift; sourceTree = "<group>"; };
-		98955EA91D8E02A500E0FC87 /* OccurrenceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OccurrenceTableViewController.swift; sourceTree = "<group>"; };
+		9826818D1D8FA84300D9EAF1 /* EditThingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditThingViewController.swift; path = "/Users/Dorian/dev/Occur/Occur/View Controllers/EditThingViewController.swift"; sourceTree = "<absolute>"; };
+		98955EA91D8E02A500E0FC87 /* OccurrenceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OccurrenceTableViewController.swift; path = "View Controllers/OccurrenceTableViewController.swift"; sourceTree = "<group>"; };
 		98B1CB351D8DCBE800F9187C /* Occur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Occur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B1CB381D8DCBE800F9187C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		98B1CB3A1D8DCBE800F9187C /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		98B1CB3C1D8DCBE800F9187C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		98B1CB3A1D8DCBE800F9187C /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MasterViewController.swift; path = "View Controllers/MasterViewController.swift"; sourceTree = "<group>"; };
+		98B1CB3C1D8DCBE800F9187C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = "View Controllers/DetailViewController.swift"; sourceTree = "<group>"; };
 		98B1CB3F1D8DCBE800F9187C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98B1CB411D8DCBE800F9187C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98B1CB441D8DCBE800F9187C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98B1CB461D8DCBE800F9187C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98B1CB4B1D8DCBE800F9187C /* OccurTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OccurTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		98B1CB4F1D8DCBE800F9187C /* OccurTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccurTests.swift; sourceTree = "<group>"; };
 		98B1CB511D8DCBE800F9187C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98B1CB561D8DCBE800F9187C /* OccurUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OccurUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B1CB5A1D8DCBE800F9187C /* OccurUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccurUITests.swift; sourceTree = "<group>"; };
 		98B1CB5C1D8DCBE800F9187C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		98B1CB681D8DCD1C00F9187C /* Thing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thing.swift; sourceTree = "<group>"; };
+		98B1CB681D8DCD1C00F9187C /* Thing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Thing.swift; path = Models/Thing.swift; sourceTree = "<group>"; };
 		98B1CB6A1D8DCE7100F9187C /* ThingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThingsTests.swift; sourceTree = "<group>"; };
+		98EE811D1D90FDF70027BEB9 /* Occurrence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Occurrence.swift; path = Models/Occurrence.swift; sourceTree = "<group>"; };
+		98EE811F1D90FE6C0027BEB9 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Repository.swift; path = Models/Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,16 +109,13 @@
 		98B1CB371D8DCBE800F9187C /* Occur */ = {
 			isa = PBXGroup;
 			children = (
+				98EE811B1D90FDBF0027BEB9 /* View Controllers */,
 				98B1CB381D8DCBE800F9187C /* AppDelegate.swift */,
-				98B1CB681D8DCD1C00F9187C /* Thing.swift */,
-				98B1CB3A1D8DCBE800F9187C /* MasterViewController.swift */,
-				98B1CB3C1D8DCBE800F9187C /* DetailViewController.swift */,
+				98EE811C1D90FDDA0027BEB9 /* Models */,
 				98B1CB3E1D8DCBE800F9187C /* Main.storyboard */,
 				98B1CB411D8DCBE800F9187C /* Assets.xcassets */,
 				98B1CB431D8DCBE800F9187C /* LaunchScreen.storyboard */,
 				98B1CB461D8DCBE800F9187C /* Info.plist */,
-				98955EA91D8E02A500E0FC87 /* OccurrenceTableViewController.swift */,
-				9826818D1D8FA84300D9EAF1 /* EditThingViewController.swift */,
 			);
 			path = Occur;
 			sourceTree = "<group>";
@@ -124,7 +123,6 @@
 		98B1CB4E1D8DCBE800F9187C /* OccurTests */ = {
 			isa = PBXGroup;
 			children = (
-				98B1CB4F1D8DCBE800F9187C /* OccurTests.swift */,
 				98B1CB511D8DCBE800F9187C /* Info.plist */,
 				98B1CB6A1D8DCE7100F9187C /* ThingsTests.swift */,
 			);
@@ -138,6 +136,27 @@
 				98B1CB5C1D8DCBE800F9187C /* Info.plist */,
 			);
 			path = OccurUITests;
+			sourceTree = "<group>";
+		};
+		98EE811B1D90FDBF0027BEB9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				98B1CB3A1D8DCBE800F9187C /* MasterViewController.swift */,
+				98B1CB3C1D8DCBE800F9187C /* DetailViewController.swift */,
+				98955EA91D8E02A500E0FC87 /* OccurrenceTableViewController.swift */,
+				9826818D1D8FA84300D9EAF1 /* EditThingViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		98EE811C1D90FDDA0027BEB9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				98B1CB681D8DCD1C00F9187C /* Thing.swift */,
+				98EE811D1D90FDF70027BEB9 /* Occurrence.swift */,
+				98EE811F1D90FE6C0027BEB9 /* Repository.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +294,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				98955EAA1D8E02A500E0FC87 /* OccurrenceTableViewController.swift in Sources */,
+				98EE811E1D90FDF70027BEB9 /* Occurrence.swift in Sources */,
 				98B1CB691D8DCD1C00F9187C /* Thing.swift in Sources */,
+				98EE81201D90FE6C0027BEB9 /* Repository.swift in Sources */,
 				98B1CB3D1D8DCBE800F9187C /* DetailViewController.swift in Sources */,
 				9826818E1D8FA84300D9EAF1 /* EditThingViewController.swift in Sources */,
 				98B1CB3B1D8DCBE800F9187C /* MasterViewController.swift in Sources */,
@@ -288,7 +309,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				98B1CB6B1D8DCE7100F9187C /* ThingsTests.swift in Sources */,
-				98B1CB501D8DCBE800F9187C /* OccurTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

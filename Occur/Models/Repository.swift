@@ -1,62 +1,12 @@
 //
-//  Thing.swift
+//  Repository.swift
 //  Occur
 //
-//  Created by Dorian Scheidt on 2016-09-17.
+//  Created by Dorian Scheidt on 2016-09-20.
 //  Copyright © 2016 Dorian Listens. All rights reserved.
 //
 
 import Foundation
-
-struct Thing: Saveable {
-    let name: String
-    let _id: SaveableID
-    
-    var description: String {
-        return name
-    }
-
-    init(name: String = "a new thing", id: SaveableID = .invalid) {
-        self.name = name
-        self._id = id
-    }
-
-    func setID(id: SaveableID) -> Thing {
-        return Thing(name: name, id: id)
-    }
-
-    func setName(name: String) -> Thing {
-        return Thing(name: name, id: _id)
-    }
-}
-
-func ==(rhs: Thing, lhs: Thing) -> Bool {
-    return rhs._id == lhs._id && rhs.name == lhs.name
-}
-
-struct Occurrence: Saveable {
-    let thingID: SaveableID
-    let _id: SaveableID
-    let date: Date
-    
-    init(thing: Thing) {
-        self.init(thingID: thing._id)
-    }
-    
-    init(thingID: SaveableID, id: SaveableID = .invalid, date: Date = Date()) {
-        self.thingID = thingID
-        self._id = id
-        self.date = date
-    }
-    
-    func setID(id: SaveableID) -> Occurrence {
-        return Occurrence(thingID: thingID, id: id)
-    }
-}
-
-func ==(rhs: Occurrence, lhs: Occurrence) -> Bool {
-    return rhs._id == lhs._id && rhs.thingID == lhs.thingID
-}
 
 protocol Saveable: Equatable {
     var _id: SaveableID { get }
