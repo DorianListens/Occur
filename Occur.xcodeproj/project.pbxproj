@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9826818E1D8FA84300D9EAF1 /* EditThingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826818D1D8FA84300D9EAF1 /* EditThingViewController.swift */; };
 		98955EAA1D8E02A500E0FC87 /* OccurrenceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98955EA91D8E02A500E0FC87 /* OccurrenceTableViewController.swift */; };
+		98AFF8C31D92457C00B719FC /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AFF8C21D92457C00B719FC /* ApplicationController.swift */; };
 		98B1CB391D8DCBE800F9187C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1CB381D8DCBE800F9187C /* AppDelegate.swift */; };
 		98B1CB3B1D8DCBE800F9187C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1CB3A1D8DCBE800F9187C /* MasterViewController.swift */; };
 		98B1CB3D1D8DCBE800F9187C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1CB3C1D8DCBE800F9187C /* DetailViewController.swift */; };
@@ -40,12 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9826818D1D8FA84300D9EAF1 /* EditThingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditThingViewController.swift; path = "/Users/Dorian/dev/Occur/Occur/View Controllers/EditThingViewController.swift"; sourceTree = "<absolute>"; };
-		98955EA91D8E02A500E0FC87 /* OccurrenceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OccurrenceTableViewController.swift; path = "View Controllers/OccurrenceTableViewController.swift"; sourceTree = "<group>"; };
+		9826818D1D8FA84300D9EAF1 /* EditThingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditThingViewController.swift; path = Occur/ViewControllers/EditThingViewController.swift; sourceTree = SOURCE_ROOT; };
+		98955EA91D8E02A500E0FC87 /* OccurrenceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OccurrenceTableViewController.swift; path = Occur/ViewControllers/OccurrenceTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		98AFF8C21D92457C00B719FC /* ApplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationController.swift; path = Occur/ViewControllers/ApplicationController.swift; sourceTree = SOURCE_ROOT; };
 		98B1CB351D8DCBE800F9187C /* Occur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Occur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B1CB381D8DCBE800F9187C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		98B1CB3A1D8DCBE800F9187C /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MasterViewController.swift; path = "View Controllers/MasterViewController.swift"; sourceTree = "<group>"; };
-		98B1CB3C1D8DCBE800F9187C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = "View Controllers/DetailViewController.swift"; sourceTree = "<group>"; };
+		98B1CB3A1D8DCBE800F9187C /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MasterViewController.swift; path = Occur/ViewControllers/MasterViewController.swift; sourceTree = SOURCE_ROOT; };
+		98B1CB3C1D8DCBE800F9187C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Occur/ViewControllers/DetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		98B1CB3F1D8DCBE800F9187C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98B1CB411D8DCBE800F9187C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98B1CB441D8DCBE800F9187C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,10 +57,10 @@
 		98B1CB561D8DCBE800F9187C /* OccurUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OccurUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B1CB5A1D8DCBE800F9187C /* OccurUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccurUITests.swift; sourceTree = "<group>"; };
 		98B1CB5C1D8DCBE800F9187C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		98B1CB681D8DCD1C00F9187C /* Thing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Thing.swift; path = Models/Thing.swift; sourceTree = "<group>"; };
+		98B1CB681D8DCD1C00F9187C /* Thing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Thing.swift; path = Occur/Models/Thing.swift; sourceTree = SOURCE_ROOT; };
 		98B1CB6A1D8DCE7100F9187C /* ThingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThingsTests.swift; sourceTree = "<group>"; };
-		98EE811D1D90FDF70027BEB9 /* Occurrence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Occurrence.swift; path = Models/Occurrence.swift; sourceTree = "<group>"; };
-		98EE811F1D90FE6C0027BEB9 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Repository.swift; path = Models/Repository.swift; sourceTree = "<group>"; };
+		98EE811D1D90FDF70027BEB9 /* Occurrence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Occurrence.swift; path = Occur/Models/Occurrence.swift; sourceTree = SOURCE_ROOT; };
+		98EE811F1D90FE6C0027BEB9 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Repository.swift; path = Occur/Models/Repository.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				98B1CB3C1D8DCBE800F9187C /* DetailViewController.swift */,
 				98955EA91D8E02A500E0FC87 /* OccurrenceTableViewController.swift */,
 				9826818D1D8FA84300D9EAF1 /* EditThingViewController.swift */,
+				98AFF8C21D92457C00B719FC /* ApplicationController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			files = (
 				98955EAA1D8E02A500E0FC87 /* OccurrenceTableViewController.swift in Sources */,
 				98EE811E1D90FDF70027BEB9 /* Occurrence.swift in Sources */,
+				98AFF8C31D92457C00B719FC /* ApplicationController.swift in Sources */,
 				98B1CB691D8DCD1C00F9187C /* Thing.swift in Sources */,
 				98EE81201D90FE6C0027BEB9 /* Repository.swift in Sources */,
 				98B1CB3D1D8DCBE800F9187C /* DetailViewController.swift in Sources */,
