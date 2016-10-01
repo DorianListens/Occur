@@ -58,7 +58,6 @@ class MasterViewController: UITableViewController {
         }
 
         if segue.identifier == "createThing" {
-            let controller = segue.destination as! EditThingViewController
         }
     }
 

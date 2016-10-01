@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var imageView: UIImageView!
 
     var repo: OccurrenceRepo = OccurrenceRepo() {
         didSet {
@@ -49,6 +50,9 @@ class DetailViewController: UIViewController {
             tvc.thing = detail
             if let label = self.detailDescriptionLabel {
                 label.text = detail.description
+            }
+            if let iv = imageView {
+                iv.image = detail.image
             }
         }
     }
