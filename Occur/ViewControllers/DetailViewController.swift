@@ -41,7 +41,7 @@ class DetailViewController: UIViewController {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: tvc, action: #selector(tvc.insertNewObject(_:)))
         self.navigationItem.rightBarButtonItem = addButton
         // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
+        configureView()
     }
 
     func configureView() {
@@ -51,6 +51,7 @@ class DetailViewController: UIViewController {
             if let label = self.detailDescriptionLabel {
                 label.text = detail.description
             }
+            title = detail.description
             if let iv = imageView {
                 iv.image = detail.image
             }

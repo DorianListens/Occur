@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class MasterViewController: UICollectionViewController {
 
     var detailViewController: DetailViewController? = nil
     let thingsRepo = ThingsRepo()
@@ -21,7 +21,6 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = self.editButtonItem
-
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
@@ -40,14 +39,14 @@ class MasterViewController: UITableViewController {
 
     func insertNewThing(_ thing: Thing) {
         let _ = thingsRepo.save(thing)
-        tableView.reloadData()
+        collectionView?.reloadData()
     }
 
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
+        if segue.identifier == "showThing" {
+            if let indexPath = self.collectionView?.indexPathsForSelectedItems?.first {
                 let thing = things[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.repo = oRepo
@@ -61,39 +60,28 @@ class MasterViewController: UITableViewController {
         }
     }
 
-    // MARK: - Table View
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    // MARK: - CollectionView
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return things.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThingCell", for: indexPath) as! ThingCell
 
         let thing = things[indexPath.row]
-        cell.textLabel!.text = thing.description
+//        cell.textLabel!.text = thing.description
+        cell.imageView?.image = thing.image
+        cell.backgroundColor = .black
         return cell
     }
+}
 
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let thingToDelete = things[indexPath.row]
-            thingsRepo.delete(thingToDelete)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-        }
-    }
-
+class ThingCell: UICollectionViewCell {
+    @IBOutlet weak var imageView: UIImageView!
 
 }
 
