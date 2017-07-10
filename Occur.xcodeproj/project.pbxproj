@@ -17,7 +17,6 @@
 		98B1CB401D8DCBE800F9187C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B1CB3E1D8DCBE800F9187C /* Main.storyboard */; };
 		98B1CB421D8DCBE800F9187C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B1CB411D8DCBE800F9187C /* Assets.xcassets */; };
 		98B1CB451D8DCBE800F9187C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B1CB431D8DCBE800F9187C /* LaunchScreen.storyboard */; };
-		98B1CB5B1D8DCBE800F9187C /* OccurUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1CB5A1D8DCBE800F9187C /* OccurUITests.swift */; };
 		98B1CB691D8DCD1C00F9187C /* Thing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1CB681D8DCD1C00F9187C /* Thing.swift */; };
 		98B1CB6B1D8DCE7100F9187C /* ThingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1CB6A1D8DCE7100F9187C /* ThingsTests.swift */; };
 		98EE811E1D90FDF70027BEB9 /* Occurrence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EE811D1D90FDF70027BEB9 /* Occurrence.swift */; };
@@ -26,13 +25,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		98B1CB4C1D8DCBE800F9187C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 98B1CB2D1D8DCBE700F9187C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 98B1CB341D8DCBE700F9187C;
-			remoteInfo = Occur;
-		};
-		98B1CB571D8DCBE800F9187C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 98B1CB2D1D8DCBE700F9187C /* Project object */;
 			proxyType = 1;
@@ -56,9 +48,6 @@
 		98B1CB461D8DCBE800F9187C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98B1CB4B1D8DCBE800F9187C /* OccurTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OccurTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B1CB511D8DCBE800F9187C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		98B1CB561D8DCBE800F9187C /* OccurUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OccurUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		98B1CB5A1D8DCBE800F9187C /* OccurUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccurUITests.swift; sourceTree = "<group>"; };
-		98B1CB5C1D8DCBE800F9187C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98B1CB681D8DCD1C00F9187C /* Thing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Thing.swift; path = Occur/Models/Thing.swift; sourceTree = SOURCE_ROOT; };
 		98B1CB6A1D8DCE7100F9187C /* ThingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThingsTests.swift; sourceTree = "<group>"; };
 		98EE811D1D90FDF70027BEB9 /* Occurrence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Occurrence.swift; path = Occur/Models/Occurrence.swift; sourceTree = SOURCE_ROOT; };
@@ -74,13 +63,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		98B1CB481D8DCBE800F9187C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		98B1CB531D8DCBE800F9187C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -103,7 +85,6 @@
 			children = (
 				98B1CB371D8DCBE800F9187C /* Occur */,
 				98B1CB4E1D8DCBE800F9187C /* OccurTests */,
-				98B1CB591D8DCBE800F9187C /* OccurUITests */,
 				98B1CB361D8DCBE800F9187C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,7 +94,6 @@
 			children = (
 				98B1CB351D8DCBE800F9187C /* Occur.app */,
 				98B1CB4B1D8DCBE800F9187C /* OccurTests.xctest */,
-				98B1CB561D8DCBE800F9187C /* OccurUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,15 +120,6 @@
 				98B1CB6A1D8DCE7100F9187C /* ThingsTests.swift */,
 			);
 			path = OccurTests;
-			sourceTree = "<group>";
-		};
-		98B1CB591D8DCBE800F9187C /* OccurUITests */ = {
-			isa = PBXGroup;
-			children = (
-				98B1CB5A1D8DCBE800F9187C /* OccurUITests.swift */,
-				98B1CB5C1D8DCBE800F9187C /* Info.plist */,
-			);
-			path = OccurUITests;
 			sourceTree = "<group>";
 		};
 		98EE811B1D90FDBF0027BEB9 /* View Controllers */ = {
@@ -211,24 +182,6 @@
 			productReference = 98B1CB4B1D8DCBE800F9187C /* OccurTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		98B1CB551D8DCBE800F9187C /* OccurUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 98B1CB651D8DCBE800F9187C /* Build configuration list for PBXNativeTarget "OccurUITests" */;
-			buildPhases = (
-				98B1CB521D8DCBE800F9187C /* Sources */,
-				98B1CB531D8DCBE800F9187C /* Frameworks */,
-				98B1CB541D8DCBE800F9187C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				98B1CB581D8DCBE800F9187C /* PBXTargetDependency */,
-			);
-			name = OccurUITests;
-			productName = OccurUITests;
-			productReference = 98B1CB561D8DCBE800F9187C /* OccurUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -245,11 +198,6 @@
 						ProvisioningStyle = Automatic;
 					};
 					98B1CB4A1D8DCBE800F9187C = {
-						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 98B1CB341D8DCBE700F9187C;
-					};
-					98B1CB551D8DCBE800F9187C = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 98B1CB341D8DCBE700F9187C;
@@ -271,7 +219,6 @@
 			targets = (
 				98B1CB341D8DCBE700F9187C /* Occur */,
 				98B1CB4A1D8DCBE800F9187C /* OccurTests */,
-				98B1CB551D8DCBE800F9187C /* OccurUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -288,13 +235,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		98B1CB491D8DCBE800F9187C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		98B1CB541D8DCBE800F9187C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -329,14 +269,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		98B1CB521D8DCBE800F9187C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				98B1CB5B1D8DCBE800F9187C /* OccurUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -344,11 +276,6 @@
 			isa = PBXTargetDependency;
 			target = 98B1CB341D8DCBE700F9187C /* Occur */;
 			targetProxy = 98B1CB4C1D8DCBE800F9187C /* PBXContainerItemProxy */;
-		};
-		98B1CB581D8DCBE800F9187C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 98B1CB341D8DCBE700F9187C /* Occur */;
-			targetProxy = 98B1CB571D8DCBE800F9187C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -521,32 +448,6 @@
 			};
 			name = Release;
 		};
-		98B1CB661D8DCBE800F9187C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = OccurUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dorianlistens.OccurUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Occur;
-			};
-			name = Debug;
-		};
-		98B1CB671D8DCBE800F9187C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = OccurUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dorianlistens.OccurUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Occur;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -573,15 +474,6 @@
 			buildConfigurations = (
 				98B1CB631D8DCBE800F9187C /* Debug */,
 				98B1CB641D8DCBE800F9187C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		98B1CB651D8DCBE800F9187C /* Build configuration list for PBXNativeTarget "OccurUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				98B1CB661D8DCBE800F9187C /* Debug */,
-				98B1CB671D8DCBE800F9187C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
